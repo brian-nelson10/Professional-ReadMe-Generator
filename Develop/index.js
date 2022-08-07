@@ -26,7 +26,8 @@ const fs = require('fs');
 
 // TODO: Create an array of questions for user input
 
-const questions = [ 
+const questions = () => {
+    return inquirer.prompt([ 
     {
     
       
@@ -46,12 +47,73 @@ const questions = [
         type: 'input',
         name: 'description',
         message: 'Give a description of your project:',
-
+        validate: descriptionInput => {
+            if (descriptionInput) {
+                return true;
+            } else {
+                console.log('Please enter a description!')
+                return false;
+            }
+        }
+    },
+    {
+        type: 'input',
+        name: 'install',
+        message: 'Please enter the applications installation instructions:',
+        validate: installInput => {
+            if (installInput) {
+                return true;
+            } else {
+                console.log('Please enter installation instructions!')
+                return false;
+            }
+        }
+    },
+    {
+        type: 'input',
+        name: 'usage',
+        message: 'Please enter user information:)',
+        validate: usageInput => {
+            if (usageInput) {
+                return true;
+            } else {
+                console.log('Please enter user information!')
+                return false;
+            }
+        }
+    },
+    {
+        type: 'input',
+        name: 'guides',
+        message: 'Please enter contribution guidelines:',
+        validate: guideInput => {
+            if (guideInput) {
+                return true;
+            } else {
+                console.log('Please enter the contribution guidelines!')
+                return false;
+            }
+        }
+    },
+    {
+        type: 'input',
+        name: 'tests',
+        message: 'Please enter the test instructions:',
+        validate: testsInput => {
+            if (testsInput) {
+                return true;
+            } else {
+                console.log('Please enter the test instructions!')
+                return false;
+            }
+        }
     }
-}
-];
+]);
+};
   
-  promptUser().then(answers => console.log(answers));
+
+
+  questions().then(answers => console.log(answers));
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {}
 
