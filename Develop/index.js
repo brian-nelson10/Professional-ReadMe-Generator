@@ -15,10 +15,43 @@
 //WHEN I click on the links in the Table of Contents
 //THEN I am taken to the corresponding section of the README
 const inquirer = require('inquirer');
+const fs = require('fs');
+//const generateMarkdown = require('Develop/utils/generateMarkdown.js')
+
+//fs.writeFile('README.md', readMe, err => {
+//    if (err) throw err;
+  
+//    console.log('ReadMe complete! Checkout ReadMe.md');
+//  });
 
 // TODO: Create an array of questions for user input
-const questions = [];
 
+const questions = [ 
+    {
+    
+      
+        type: 'input',
+        name: 'project title',
+        message: 'What is your project title?',
+        validate: titleInput => {
+          if (titleInput) {
+            return true;
+        } else {
+            console.log('Please enter your project title!');
+            return false;
+        }
+      }
+    },
+    {
+        type: 'input',
+        name: 'description',
+        message: 'Give a description of your project:',
+
+    }
+}
+];
+  
+  promptUser().then(answers => console.log(answers));
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {}
 
