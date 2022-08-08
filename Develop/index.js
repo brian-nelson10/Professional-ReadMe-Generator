@@ -25,7 +25,6 @@ const fs = require('fs');
 //  });
 
 // TODO: Create an array of questions for user input
-
 const questions = () => {
     return inquirer.prompt([ 
     {
@@ -83,11 +82,24 @@ const questions = () => {
         }
     },
     {
+        type: 'confirm',
+        name: 'confirmContribute',
+        message: 'Would you like to allow other developers to contribute to your project?',
+        default: true
+    },
+    {
         type: 'input',
-        name: 'guides',
+        name: 'contribute',
         message: 'Please enter contribution guidelines:',
-        validate: guideInput => {
-            if (guideInput) {
+        when: ({confirmContribute}) => {
+            if (confirmContribute) {
+                return true;
+            } else {
+                return false;
+            }
+        },
+        validate: contributeInput => {
+            if (contributeInput) {
                 return true;
             } else {
                 console.log('Please enter the contribution guidelines!')
@@ -110,10 +122,65 @@ const questions = () => {
     }
 ]);
 };
+
+const promptLicense = licenseData => {
+    console.log(`
+    ================
+    Choose A License
+    ================
+     `);
+     return inquirer
+        .prompt([
+        {
+             type: 'checkbox',
+             name: 'license',
+             message: 'Please choose a license for your project! (Check one)',
+             choices: ['agpl-3.0','gpl-3.0','mpl-2.0','apache-2.0','mit','bsl-1.0','No License Please']
+        },
+        {
+            type: 'input',
+            name: 'github',
+            message: 'Enter your GitHub Username.',
+            validate: githubInput => {
+                if (githubInput) {
+                    return true;
+                } else {
+                    console.log('Please enter your GitHub Username!!');
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'link',
+            message: 'Enter the GitHub link to your project.',
+            validate: linkInput => {
+                if (linkInput) {
+                    return true;
+                } else {
+                    console.log('Please enter the GitHub link to your project!!');
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'email',
+            message: 'Enter your Email address.',
+            validate: emailInput => {
+                if (emailInput) {
+                    return true;
+                } else {
+                    console.log('Please enter a valid email address!!');
+                }
+            }
+        }
+    ]);
+};
   
 
 
   questions().then(answers => console.log(answers));
+
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {}
 
