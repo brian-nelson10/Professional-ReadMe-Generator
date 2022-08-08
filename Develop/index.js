@@ -16,22 +16,21 @@
 //THEN I am taken to the corresponding section of the README
 const inquirer = require('inquirer');
 const fs = require('fs');
+const generateMarkdown = require('./utils/generateMarkdown');
 //const generateMarkdown = require('Develop/utils/generateMarkdown.js')
 
-//fs.writeFile('README.md', readMe, err => {
-//    if (err) throw err;
-  
-//    console.log('ReadMe complete! Checkout ReadMe.md');
-//  });
 
 // TODO: Create an array of questions for user input
 const questions = () => {
+    console.log(`
+    =================
+    README GENERATOR!
+    =================
+     `);
     return inquirer.prompt([ 
     {
-    
-      
         type: 'input',
-        name: 'project title',
+        name: 'title',
         message: 'What is your project title?',
         validate: titleInput => {
           if (titleInput) {
@@ -45,12 +44,38 @@ const questions = () => {
     {
         type: 'input',
         name: 'description',
-        message: 'Give a description of your project:',
+        message: 'Give a description of what your project does:',
         validate: descriptionInput => {
             if (descriptionInput) {
                 return true;
             } else {
                 console.log('Please enter a description!')
+                return false;
+            }
+        }
+    },
+    {
+        type: 'input',
+        name: 'why',
+        message: 'Why did you create this project?',
+        validate: whyInput => {
+            if (whyInput) {
+                return true;
+            } else {
+                console.log('Please enter a reason!')
+                return false;
+            }
+        }
+    },
+    {
+        type: 'input',
+        name: 'who',
+        message: 'Give a description of who will use your project:',
+        validate: whoInput => {
+            if (whoInput) {
+                return true;
+            } else {
+                console.log('Please enter who!')
                 return false;
             }
         }
@@ -119,25 +144,14 @@ const questions = () => {
                 return false;
             }
         }
-    }
-]);
-};
-
-const promptLicense = licenseData => {
-    console.log(`
-    ================
-    Choose A License
-    ================
-     `);
-     return inquirer
-        .prompt([
-        {
-             type: 'checkbox',
-             name: 'license',
-             message: 'Please choose a license for your project! (Check one)',
-             choices: ['agpl-3.0','gpl-3.0','mpl-2.0','apache-2.0','mit','bsl-1.0','No License Please']
-        },
-        {
+    },
+    {
+        type: 'checkbox',
+        name: 'license',
+        message: 'Please choose a license for your project! (Check one)',
+        choices: ['agpl-3.0','gpl-3.0','mpl-2.0','apache-2.0','mit','bsl-1.0','No License Please']
+    },
+    {
             type: 'input',
             name: 'github',
             message: 'Enter your GitHub Username.',
@@ -149,8 +163,8 @@ const promptLicense = licenseData => {
                     return false;
                 }
             }
-        },
-        {
+    },
+    {
             type: 'input',
             name: 'link',
             message: 'Enter the GitHub link to your project.',
@@ -161,8 +175,8 @@ const promptLicense = licenseData => {
                     console.log('Please enter the GitHub link to your project!!');
                 }
             }
-        },
-        {
+    },
+    {
             type: 'input',
             name: 'email',
             message: 'Enter your Email address.',
@@ -173,19 +187,74 @@ const promptLicense = licenseData => {
                     console.log('Please enter a valid email address!!');
                 }
             }
+    },
+    {
+        type: 'input',
+        name: 'name',
+        message: 'Enter your Name:)',
+        validate: nameInput => {
+            if (nameInput) {
+                return true;
+            } else {
+                console.log('Please enter your name!!');
+            }
         }
-    ]);
+    }
+  ]);
 };
-  
-
-
-  questions().then(answers => console.log(answers));
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+const writeFile = fileContent => {
+    return new Promise((resolve,reject) => {
+        fs.writeFile('../dist/README-new.md', fileContent, err => {
+            if(err) {
+                reject(err);
+                return;
+            }
 
-// TODO: Create a function to initialize app
-function init() {}
+            resolve({
+                ok: true,
+                message: 'Your New Professional ReadMe File Was Created!'
+            });
+        }); 
+    });
+};
+
+
 
 // Function call to initialize app
-init();
+questions()
+.then(readmeData => {
+    console.log(readmeData);
+    return generateMarkdown(readmeData);
+})
+.then(pageMD => {
+    return writeFile(pageMD);
+})
+.then(writeFileResponse => {
+    console.log(writeFileResponse.message);
+})
+.catch(err => {
+    console.log(err);
+});
+
+
+
+
+
+
+// TODO: Create a function to initialize app
+//const init = () => {
+//    return inquirer.prompt(questions)
+//    .then(answers => {
+//      return answers,
+//      console.log(answers);
+//    })
+//    }
+//const init = () => {
+//    return inquirer.prompt(questions)
+//    .then(answers => {
+//        return answers;
+//    })
+    
+//}
