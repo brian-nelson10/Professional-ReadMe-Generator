@@ -149,7 +149,7 @@ const questions = () => {
         type: 'checkbox',
         name: 'license',
         message: 'Please choose a license for your project! (Check one)',
-        choices: ['agpl-3.0','gpl-3.0','mpl-2.0','apache-2.0','mit','bsl-1.0','No License Please']
+        choices: ['apache','gpl-3.0','mpl-2.0','unlicense','mit','bsl-1.0','No License Please']
     },
     {
             type: 'input',
@@ -237,24 +237,3 @@ questions()
 .catch(err => {
     console.log(err);
 });
-
-
-
-
-
-
-// TODO: Create a function to initialize app
-//const init = () => {
-//    return inquirer.prompt(questions)
-//    .then(answers => {
-//      return answers,
-//      console.log(answers);
-//    })
-//    }
-//const init = () => {
-//    return inquirer.prompt(questions)
-//    .then(answers => {
-//        return answers;
-//    })
-    
-//}

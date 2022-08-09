@@ -27,12 +27,16 @@ function renderLicenseLink(license) {
 function renderLicenseSection(license) {
   if (license !== 'No License Please') {
     return ` 
-My app is covered under the following license:
+My app is covered under the following license
 
+    
     ${renderLicenseLink(license)}
+
+    [${renderLicenseLink(license)}]
+
     `;
   } else {
-    return 'I have decided against having any third party contributions. Thank you for understanding.';
+    return 'I have decided against having any license.';
   }
 }
 
