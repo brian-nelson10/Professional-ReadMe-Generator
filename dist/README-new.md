@@ -41,7 +41,7 @@ user
 My app is covered under the following license
 
 
-    [mit](https://choosealicense.com/licenses/mit)
+(https://choosealicense.com/licenses/mit)
     
 
     
