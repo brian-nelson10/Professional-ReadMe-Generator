@@ -5,7 +5,7 @@ const fs = require('fs');
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
   if (license !== 'No License Please') {
-    return ` ![${license} badge](https://img.shields.io/badge/LICENSE-${license}-brightgreen)`;
+    return ` ![${license} badge](https://img.shields.io/badge/License-${license}-brightgreen)`;
   } else {
     return ' ';
   }
@@ -16,7 +16,8 @@ function renderLicenseBadge(license) {
 function renderLicenseLink(license) {
   if (license !== 'No License Please') {
     return `
-    [${license}](https://choosealicense.com/licenses/${license})`;
+    ![${license}](https://choosealicense.com/licenses/${license})
+    `;
   } else {
     return ' ';
   }
@@ -30,9 +31,7 @@ function renderLicenseSection(license) {
 My app is covered under the following license
 
     
-    ${renderLicenseLink(license)}
-
-    [${renderLicenseLink(license)}]
+${renderLicenseLink(license)}
 
     `;
   } else {
