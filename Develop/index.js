@@ -96,7 +96,7 @@ const questions = () => {
     {
         type: 'input',
         name: 'usage',
-        message: 'Please enter user information:)',
+        message: 'Please enter user information:',
         validate: usageInput => {
             if (usageInput) {
                 return true;
@@ -177,16 +177,16 @@ const questions = () => {
             }
     },
     {
-            type: 'input',
-            name: 'email',
-            message: 'Enter your Email address.',
-            validate: emailInput => {
-                if (emailInput) {
-                    return true;
-                } else {
-                    console.log('Please enter a valid email address!!');
-                }
+        type: 'input',
+        name: 'email',
+        message: 'Enter your Email address.',
+        validate: emailInput => {
+            if (emailInput) {
+                return true;
+            } else {
+                console.log('Please enter a valid email address!!');
             }
+        }
     },
     {
         type: 'input',
