@@ -4,7 +4,7 @@ const fs = require('fs');
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
-  if (license !== 'No License Please') {
+  if (license !== 'no license please') {
     return ` ![${license} badge](https://img.shields.io/badge/License-${license}-brightgreen)`;
   } else {
     return ' ';
@@ -14,9 +14,9 @@ function renderLicenseBadge(license) {
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
-  if (license !== 'No License Please') {
+  if (license !== 'no license please') {
     return `
-    ![${license}](https://choosealicense.com/licenses/${license})
+    [${license}](https://choosealicense.com/licenses/${license})
     `;
   } else {
     return ' ';
@@ -26,16 +26,27 @@ function renderLicenseLink(license) {
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
-  if (license !== 'No License Please') {
+  if (license !== 'no license please') {
     return ` 
 My app is covered under the following license
 
-    
 ${renderLicenseLink(license)}
 
     `;
   } else {
-    return 'I have decided against having any license.';
+    return ' ';
+  }
+}
+
+function renderContributeSection(confirmContribute, data) {
+  if (!confirmContribute) {
+    return `
+  I have decided not to accept any contributions from third parties at this time, please contact me below for further advisement, Thank you!
+    `;
+  } else {
+    return `
+  ${data}
+    `;
   }
 }
 
@@ -84,7 +95,7 @@ ${renderLicenseSection(data.license)}
 
 # Contributing
 
-${data.contribute}
+${renderContributeSection(data.confirmContribute, data.contribute)}
 
 # Tests
 
@@ -108,3 +119,10 @@ Made with ❤️ by ${data.name}
 
 
 module.exports = generateMarkdown;
+
+
+
+//fix input for license
+//make license hyperlink
+//make video
+//make readme
