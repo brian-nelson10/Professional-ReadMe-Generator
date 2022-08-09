@@ -48,8 +48,8 @@ ${renderLicenseBadge(data.license)}
   * [Usage](#usage)
   * [License](#license)
   * [Contributing](#contributing)
-  * Tests(#tests)
-  * Questions/Contact(#questions/contact)
+  * [Tests](#tests)
+  * [Questions/Contact](#questions/contact)
 
 # Description
 
