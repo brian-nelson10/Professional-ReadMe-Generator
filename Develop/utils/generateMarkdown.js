@@ -52,7 +52,7 @@ function renderContributeSection(confirmContribute, data) {
 //Function to generate markdown for README
 function generateMarkdown(data) {
   return `
-# ${data.title}
+# **${data.title}** 
 
 ${renderLicenseBadge(data.license)}
 
@@ -103,7 +103,7 @@ ${data.tests}
 
 Please feel free to ask me any questions or contact me through either of these links below:
 
-**[${data.github}](https://github.com/${data.github})**
+**[GitHub](https://github.com/${data.github})**
 
 **[${data.email}](mailto:${data.email})**
 

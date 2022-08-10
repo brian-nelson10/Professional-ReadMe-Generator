@@ -8,8 +8,6 @@
 * [Usage](#usage)
 * [Contact](#contact-me)
 
-
-
 # Description
 
 This project is a simple, efficient, and professional way to generate a readme.md file without applying any of your own mark down syntax! The Professional ReadMe Generator will generate your readme without forgetting any key sections you want to include in your readme.
@@ -18,7 +16,7 @@ This application solves the problem of overlooking your readme and/or creating a
 
 # Installation
 
-Prerequisites: [Node.js](https://nodejs.org/en/)
+Prerequisites: [Node.js](https://nodejs.org/en/) &amp; [Inquirer](https://www.npmjs.com/package/inquirer)
 
 * To install the app follow the 'Install Link' below to my repository.
 * Clone code to your own local repo.
