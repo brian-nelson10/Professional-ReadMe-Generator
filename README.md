@@ -34,6 +34,14 @@ If you decline any yes or no prompts, the generator will return with an auto sta
 
 **[Video Tutorial](https://drive.google.com/file/d/1TESlHAIdz5Ov0Xh5ez83P-y0aHKle46U/view)**
 
+**Screenshots!**
+
+![screenshot](Capture.PNG)
+
+<br>
+
+![screenshot2](Capture2.PNG)
+
 # Contribution
 
 Currently seeking those who can provide eyeball time, brain juice, lines of code, code improvements, raising an issue, asking a question, run the communication outside of the code repo, or even stump up some 💰! Please see contact for link!! 
