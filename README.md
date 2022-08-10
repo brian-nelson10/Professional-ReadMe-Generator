@@ -32,7 +32,7 @@ Prerequisites: [Node.js](https://nodejs.org/en/) &amp; [Inquirer](https://www.np
 Run 'node index' in the terminal. You will then be prompted to answer questions about your project, starting with the title. Be sure to capitalize when necessary.
 If you decline any yes or no prompts, the generator will return with an auto statement. Once all prompts have been completed, you will see a console log of your answers to all the prompts so you can look over immediately. You will also be notified that your new readme was generated in the dist folder. You can now head over to the dist folder and checkout your new readme to make any changes or simply just move syntax into your own project and you're done!
 
-**[Video Tutorial]()**
+**[Video Tutorial](https://drive.google.com/file/d/1TESlHAIdz5Ov0Xh5ez83P-y0aHKle46U/view)**
 
 # Contribution
 
