@@ -1,13 +1,11 @@
-# Professional README Generator 🚀
+# Professional **README** Generator 🚀
 
-This project is a ![badge](https://img.shields.io/badge/README-generator-success)
+This project is a  ![badge](https://img.shields.io/badge/README-generator-success)
 
 ## Table of Contents
 * [Description](#description)
 * [Installation](#installation)
 * [Usage](#usage)
-* [Credits]
-* [Tests](#tests)
 * [Contact](#contact-me)
 
 
@@ -20,22 +18,34 @@ This application solves the problem of overlooking your readme and/or creating a
 
 # Installation
 
-To install the app follow the 'Install Link' below to my repository.
-Clone code to your own local repo.
-Using Terminal, make sure you are in root directory.
-run node index and follow prompts!
-Your new readme will be generated in the dist folder.
-See Usage for Tutorial!
+Prerequisites: Node.js
 
-[Install Link](https://github.com/brian-nelson10/Professional-ReadMe-Generator)
+* To install the app follow the 'Install Link' below to my repository.
+* Clone code to your own local repo.
+* Using Terminal, make sure you are in root directory.
+* run node index and follow prompts!
+* Your new readme will be generated in the dist folder.
+**See Usage for Tutorial!**
+
+**[Install Link](https://github.com/brian-nelson10/Professional-ReadMe-Generator)**
 
 # Usage
 
-# Credits
+Run 'node index' in the terminal. You will then be prompted to answer questions about your project, starting with the title. Be sure to capitalize when necessary.
+If you decline any yes or no prompts, the generator will return with an auto statement. Once all prompts have been completed, you will see a console log of your answers to all the prompts so you can look over immediately. You will also be notified that your new readme was generated in the dist folder. You can now head over to the dist folder and checkout your new readme to make any changes or simply just move syntax into your own project and you're done!
 
-# Tests
+[Video Tutorial]()
+
+# Contribution
+
+Currently seeking those who can provide eyeball time, brain juice, lines of code, code improvements, raising an issue, asking a question, run the communication outside of the code repo, or even stump up some 💰! Please see contact for link!! 
 
 # Contact Me 
+
+Want to contribute?? Drop me a line **[here](mailto:bn3l10@gmail.com)**
+
+Check out my **[GitHub](https://github.com/brian-nelson10)**
+
 
 ## Maker
 Made with ❤️ by brian

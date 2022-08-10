@@ -198,7 +198,7 @@ const writeFile = fileContent => {
 
             resolve({
                 ok: true,
-                message: 'Your New Professional ReadMe File Was Created!'
+                message: 'Your New Professional ReadMe File Was Created in the dist folder!'
             });
         }); 
     });

@@ -16,7 +16,7 @@ function renderLicenseBadge(license) {
 function renderLicenseLink(license) {
   if (license !== 'no license please') {
     return `
-    [${license}](https://choosealicense.com/licenses/${license})
+    [License Website](https://choosealicense.com/licenses/${license})
     `;
   } else {
     return ' ';
