@@ -1,6 +1,6 @@
 # Professional **README** Generator 🚀
 
-This project is a  ![badge](https://img.shields.io/badge/README-generator-success)
+![badge](https://img.shields.io/badge/README-generator-success)
 
 ## Table of Contents
 * [Description](#description)
@@ -18,7 +18,7 @@ This application solves the problem of overlooking your readme and/or creating a
 
 # Installation
 
-Prerequisites: Node.js
+Prerequisites: [Node.js](https://nodejs.org/en/)
 
 * To install the app follow the 'Install Link' below to my repository.
 * Clone code to your own local repo.
@@ -34,7 +34,7 @@ Prerequisites: Node.js
 Run 'node index' in the terminal. You will then be prompted to answer questions about your project, starting with the title. Be sure to capitalize when necessary.
 If you decline any yes or no prompts, the generator will return with an auto statement. Once all prompts have been completed, you will see a console log of your answers to all the prompts so you can look over immediately. You will also be notified that your new readme was generated in the dist folder. You can now head over to the dist folder and checkout your new readme to make any changes or simply just move syntax into your own project and you're done!
 
-[Video Tutorial]()
+**[Video Tutorial]()**
 
 # Contribution
 

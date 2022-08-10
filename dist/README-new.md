@@ -41,7 +41,7 @@ to.test
 My app is covered under the following license
 
 
-    [License Website](https://choosealicense.com/licenses/apache)
+  [License Website](https://choosealicense.com/licenses/apache)
     
 
     
@@ -60,9 +60,9 @@ test.test
 
 Please feel free to ask me any questions or contact me through either of these links below:
 
-[brian-nelson10](https://github.com/brian-nelson10)
+**[brian-nelson10](https://github.com/brian-nelson10)**
 
-[bn3l10@gmail.com](mailto:bn3l10@gmail.com)
+**[bn3l10@gmail.com](mailto:bn3l10@gmail.com)**
 
 <br>
 

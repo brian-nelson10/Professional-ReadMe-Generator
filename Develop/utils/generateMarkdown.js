@@ -15,8 +15,7 @@ function renderLicenseBadge(license) {
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
   if (license !== 'no license please') {
-    return `
-    [License Website](https://choosealicense.com/licenses/${license})
+    return `[License Website](https://choosealicense.com/licenses/${license})
     `;
   } else {
     return ' ';
@@ -28,7 +27,7 @@ function renderLicenseLink(license) {
 function renderLicenseSection(license) {
   if (license !== 'no license please') {
     return ` 
-My app is covered under the following license
+My app is covered under the ${license} license
 
 ${renderLicenseLink(license)}
 
@@ -90,7 +89,6 @@ ${renderLicenseBadge(data.license)}
 ${data.usage}
 
 # License
-
 ${renderLicenseSection(data.license)}
 
 # Contributing
@@ -105,9 +103,9 @@ ${data.tests}
 
 Please feel free to ask me any questions or contact me through either of these links below:
 
-[${data.github}](https://github.com/${data.github})
+**[${data.github}](https://github.com/${data.github})**
 
-[${data.email}](mailto:${data.email})
+**[${data.email}](mailto:${data.email})**
 
 <br>
 
